@@ -4,6 +4,7 @@
     package="com.bmatjik.usbdetect">
     <uses-feature android:name="android.hardware.usb.host" />
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -24,6 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".service.UsbPluginService"
+            android:exported="false"/>
 
     </application>
 
