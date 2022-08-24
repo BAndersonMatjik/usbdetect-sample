@@ -1,10 +1,8 @@
-package com.bmatjik.usbdetect.service
+package com.bmatjik.usbdetectlib.service
 
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
-import android.util.Log
-import android.widget.Toast
 import androidx.datastore.preferences.core.edit
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,8 +21,6 @@ class UsbPluginService : Service(), CoroutineScope {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Log.d(Companion.TAG, "onStartCommand: start")
-        Toast.makeText(this, "service starting", Toast.LENGTH_SHORT).show()
         launch {
             usbPlugReceiverFlow(this@UsbPluginService).collectLatest { status ->
                 dataStore.edit {
@@ -37,7 +33,6 @@ class UsbPluginService : Service(), CoroutineScope {
 
 
     override fun onDestroy() {
-        Log.d(TAG, "onDestroy: ")
         super.onDestroy()
         coroutineJob.cancel()
     }

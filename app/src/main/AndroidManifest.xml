@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.bmatjik.usbdetect">
-    <uses-feature android:name="android.hardware.usb.host" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -26,8 +26,6 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".service.UsbPluginService"
-            android:exported="false"/>
 
     </application>
 
