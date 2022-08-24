@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
+@Deprecated("Heavy Load")
 class UsbPluginService : Service(), CoroutineScope {
     private var coroutineJob: Job = Job()
     override val coroutineContext: CoroutineContext
