@@ -10,21 +10,16 @@ import com.bmatjik.usbdetectlib.service.UsbPluginService
 import kotlinx.coroutines.CoroutineScope
 import kotlin.coroutines.coroutineContext
 
-class App:Application() {
+class App:Application(){
     private var service:Intent? = null
     override fun onCreate() {
         super.onCreate()
-//        Intent(this, UsbPluginService::class.java).also { intent ->
-//            service = intent
-//            startService(intent)
-//        }
+
     }
 
     override fun onTerminate() {
         super.onTerminate()
-//        service?.apply {
-//            stopService(this)
-//        }
+
     }
 
     companion object {

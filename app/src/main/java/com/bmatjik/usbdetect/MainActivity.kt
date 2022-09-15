@@ -20,7 +20,7 @@ import com.bmatjik.usbdetectlib.service.UsbDetectionObservable
 import com.bmatjik.usbdetectlib.service.UsbListenResultFromDataStore
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),UsbConnectionCallback {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -28,19 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        lifecycle.addObserver(UsbDetectionObservable(context = this))
-
-        UsbListenResultFromDataStore(this,lifecycleScope,object :UsbConnectionCallback{
-            override fun onConnected() {
-                binding.tvStatus.text = "Usb : onConnected"
-            }
-
-            override fun onDisconnected() {
-                binding.tvStatus.text = "Usb : onDisconnected"
-            }
-        })
-
+        lifecycle.addObserver(UsbDetectionObservable(context = this,this))
     }
 
     override fun onDestroy() {
@@ -49,6 +37,14 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "MainActivity"
+    }
+
+    override fun onConnected() {
+        binding.tvStatus.text = "Usb : onConnected"
+    }
+
+    override fun onDisconnected() {
+        binding.tvStatus.text = "Usb : onDisconnected"
     }
 
 }
