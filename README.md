@@ -10,7 +10,7 @@ Getting Started
 
 How to Getting Result is Usb Connected or Disconnected 
 As LifeCycleObservar 
- ```class MainActivity : AppCompatActivity(),UsbConnectionCallback {
+ <code>class MainActivity : AppCompatActivity(),UsbConnectionCallback {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -30,10 +30,10 @@ As LifeCycleObservar
         binding.tvStatus.text = "Usb : onDisconnected"
     }
 
-}```
+}</code>
 
 As Coroutine Flow
-``` class MainActivity : AppCompatActivity() {
+<code> class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -51,6 +51,7 @@ As Coroutine Flow
             }
         }
     }
-}```
+}</code>
+
 
 
