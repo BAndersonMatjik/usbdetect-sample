@@ -6,7 +6,8 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
-class UsbListenResultFromDataStore(private val context: Context, private val coroutineScope: CoroutineScope, private val usbConnectionCallback: UsbConnectionCallback){
+@Deprecated("Not The Best Options ")
+internal class UsbListenResultFromDataStore(private val context: Context, private val coroutineScope: CoroutineScope, private val usbConnectionCallback: UsbConnectionCallback){
     init {
         coroutineScope.launch {
             context.dataStore.data.map {p->

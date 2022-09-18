@@ -17,7 +17,9 @@ import com.bmatjik.usbdetect.databinding.ActivityMainBinding
 
 import com.bmatjik.usbdetectlib.service.UsbConnectionCallback
 import com.bmatjik.usbdetectlib.service.UsbDetectionObservable
-import com.bmatjik.usbdetectlib.service.UsbListenResultFromDataStore
+import com.bmatjik.usbdetectlib.service.usbPlugReceiverAsFlow
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity(),UsbConnectionCallback {
