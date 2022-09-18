@@ -11,7 +11,7 @@ import kotlinx.coroutines.channels.trySendBlocking
 import kotlinx.coroutines.flow.callbackFlow
 
 @OptIn(ExperimentalCoroutinesApi::class)
-fun usbPlugReceiverFlow(context: Context) = callbackFlow<Boolean> {
+fun usbPlugReceiverAsFlow(context: Context) = callbackFlow<Boolean> {
     val receiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             val action = intent?.action

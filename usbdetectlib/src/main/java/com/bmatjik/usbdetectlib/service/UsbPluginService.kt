@@ -23,7 +23,7 @@ class UsbPluginService : Service(), CoroutineScope {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         launch {
-            usbPlugReceiverFlow(this@UsbPluginService).collectLatest { status ->
+            usbPlugReceiverAsFlow(this@UsbPluginService).collectLatest { status ->
                 dataStore.edit {
                     it[USB_STATUS] = status
                 }
