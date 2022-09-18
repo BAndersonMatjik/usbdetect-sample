@@ -10,9 +10,6 @@ import kotlinx.coroutines.channels.trySendBlocking
 import kotlinx.coroutines.flow.callbackFlow
 
 
-
-
-
 internal class UsbPlugReceiver(private val usbConnectionCallback: UsbConnectionCallback) :
     BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
