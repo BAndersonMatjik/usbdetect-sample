@@ -5,8 +5,6 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.util.Log
 import androidx.datastore.preferences.core.edit
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.bmatjik.usbdetectlib.service.UsbPluginService
 import kotlinx.coroutines.CoroutineScope
 import kotlin.coroutines.coroutineContext
 
